@@ -14,7 +14,7 @@ header {
 
 header .brand {
   font-weight: bold;
-  flex: 6;
+  text-align: center;
 }
 
 header ul {
@@ -29,6 +29,9 @@ header ul li {
 
 header a {
   color: #ffffff;
+}
+a {
+  color: rgb(16, 127, 230);
 }
 
 .container {
@@ -112,6 +115,10 @@ textarea {
   height: 80px;
 }
 
+textarea.comment_message {
+  height: 42px;
+}
+
 input#username {
   width: 320px;
   padding: 20px 25px;
@@ -138,7 +145,7 @@ input.error {
   margin-bottom: 15px;
 }
 
-.btn#publish {
+.btn#publish, .publish-comment {
   margin-left: auto;
 }
 
@@ -148,13 +155,23 @@ ul.posts {
   list-style: none;
 }
 
-ul.posts li {
+ul.posts li .post, ul.posts li ul.comments li .comment {
   display: flex;
   margin: 10px 0;
-  background: #eeeeee;
+  background: #f3f3f3;
   border-radius: 5px;
-  border: 1px solid #d4d4d4;
+  // border: 1px solid #d4d4d4;
   padding: 15px;
+}
+
+ul.posts li ul.comments {
+  margin-left: 5%;
+  padding: 0;
+  list-style: none;
+}
+
+ul.posts li ul.comments li .comment {
+  margin: 2px 0;
 }
 
 ul.posts li .message {
@@ -168,8 +185,14 @@ ul.posts li .username {
   margin-right: 10px;
 }
 
-ul.posts li .message .time {
+ul.posts li .message .post-links, ul.posts li .message .comment-links {
   color: #777777;
   display: block;
   text-align: right;
 }
+
+ul.posts li .message .post-links div, ul.posts li .message .post-comment div {
+  display: inline-block;
+  margin: 0 5px;
+}
+

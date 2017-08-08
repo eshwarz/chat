@@ -5,6 +5,7 @@ var PostsListener = function () {
 
   this.io = null;
   this.socket = null;
+  this.count = 0;
 
   /**
    * constructor
@@ -25,6 +26,9 @@ var PostsListener = function () {
    */
   this.postMessageHandler = function () {
     this.socket.on('post_message', function (response) {
+      // incrementing the post count acts as primary key
+      this.count++;
+      response.id = this.count;
       this.io.emit('post_message', response);
     }.bind(this));
   };
