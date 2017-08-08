@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Facebook Communication Center</title>
 
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/styles/main.css" />
+
+    <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
     <script src="/socket.io/socket.io.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script src="/scripts/posts.js"></script>
+    <script src="/scripts/session.js"></script>
+    <script src="/scripts/age.js"></script>
+    <script src="/scripts/main.js"></script>
   </head>
+
   <body>
-    <h1>Facebook Communication Center</h1>
+
+    <header>
+      <div class="container flexbox">
+        <div class="brand">Facebook Communication Center</div>
+        <ul>
+          <li>
+            <a href="#" id="view_all_posts">View All Posts</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="content">
+
+        <div class="welcome" id="welcome">
+          <h3>Please enter your name to join the conversation.</h3>
+          <div class="controls">
+            <input type="text" placeholder="Name" id="username" />
+            <button id="login" class="btn">Enter Conversation</button>
+          </div>
+        </div>
+
+        <section class="logged-in-view" id="logged-in-view">
+          <div class="post-form">
+            <label for="post_message">Write your posts here!</label>
+            <textarea id="post_message" placeholder="Start typing!"></textarea>
+            <div class="flexbox">
+              <button class="btn medium" id="publish">Publish</button>
+            </div>
+          </div>
+
+          <ul class="posts" id="posts"></ul>
+        </section>
+      </div>
+    </div>
 
   </body>
 </html>

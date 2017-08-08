@@ -1,0 +1,175 @@
+body {
+  margin: auto;
+  padding: 0;
+  font-family: 'Lucida Grande', Tahoma, Verdana, Sans-Serif, Arial;
+  font-size: 14px;
+}
+
+header {
+  background: #333333;
+  color: #ffffff;
+  line-height: 45px;
+  box-shadow: 0 2px 3px #aaaaaa;
+}
+
+header .brand {
+  font-weight: bold;
+  flex: 6;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header a {
+  color: #ffffff;
+}
+
+.container {
+  margin: auto;
+  width: 1000px;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.content {
+  margin: 20px 0;
+}
+
+.welcome {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.welcome h3 {
+  font-size: 30px;
+  font-weight: normal;
+  color: #aaaaaa;
+}
+
+.welcome .controls {
+  margin: 50px auto;
+}
+
+.btn {
+  font-family: 'Lucida Grande', Tahoma, Verdana, Sans-Serif, Arial;
+  background: #1e5799;
+  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+  text-shadow: 1px 1px 2px #333;
+  border: 1px solid #1e5799;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 12px;
+  outline: none;
+}
+
+.btn.small {
+  font-size: 10px;
+  padding: 7px 10px;
+}
+
+.btn.medium {
+  font-size: 14px;
+  padding: 13px 18px;
+}
+
+.btn:active {
+  background: #1e5799;
+  background: linear-gradient(to bottom, #1e5799 0%,#207cca 100%);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn#login {
+  margin-left: -6px;
+  padding: 20px 25px;
+  font-size: 25px;
+  border-radius: 0 5px 5px 0;
+}
+
+textarea {
+  font-family: 'Lucida Grande', Tahoma, Verdana, Sans-Serif, Arial;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #aaaaaa;
+  box-shadow: 0 0 10px #aaaaaa inset;
+  color: #777777;
+  box-sizing: border-box;
+  outline: none;
+  height: 80px;
+}
+
+input#username {
+  width: 320px;
+  padding: 20px 25px;
+  font-size: 25px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #aaaaaa;
+  box-shadow: 0 0 10px #aaaaaa inset;
+  color: #777777;
+  outline: none;
+}
+
+input.error {
+  border-color: #bb0000 !important;
+  box-shadow: 0 0 10px #770000 inset !important;
+}
+
+.logged-in-view {
+  display: none;
+}
+
+.logged-in-view label, .logged-in-view textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.btn#publish {
+  margin-left: auto;
+}
+
+ul.posts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.posts li {
+  display: flex;
+  margin: 10px 0;
+  background: #eeeeee;
+  border-radius: 5px;
+  border: 1px solid #d4d4d4;
+  padding: 15px;
+}
+
+ul.posts li .message {
+  flex: auto;
+}
+
+ul.posts li .username {
+  font-weight: bold;
+  color: #00cc00;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+ul.posts li .message .time {
+  color: #777777;
+  display: block;
+  text-align: right;
+}

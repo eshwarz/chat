@@ -3,6 +3,9 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
+var sessionListener = require('./public/scripts/server/session_listener');
+var postsListener = require('./public/scripts/server/posts_listener');
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -12,14 +15,10 @@ server.listen(3000, function () {
 });
 
 io.on('connection', function (socket) {
-  console.log('a user connected!');
-  // user disconnected
-  socket.on('disconnect', function () {
-    console.log('user disconnected');
-  });
 
-  // post message handler
-  socket.on('post_message', function (response) {
-    io.emit('post_message', response.message);
-  });
+  console.log('a user connected!');
+  // listeners
+  sessionListener.init(socket, io);
+  postsListener.init(socket, io);
+
 });

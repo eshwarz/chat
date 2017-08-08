@@ -1,7 +1,6 @@
 var socket = io();
 
-socket.emit('post_message', { message: 'new message from client' });
+(new Session()).init(socket); // session
+(new Posts()).init(socket); // posts
 
-socket.on('post_message', function (response) {
-  $('body').append('<p>' + response + '</p>');
-});
+(new Age()).init(); // updates ages of the posts & comments
