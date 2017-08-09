@@ -26,8 +26,9 @@ var Comments = function () {
    * Opens reply / comment box
    * @return {void}
    */
-  this.openCommenter = function () {
+  this.openCommenter = function (e) {
     $('#posts').on('click', '.reply', function () {
+      e.preventDefault();
       _this.openCommenterForPost($(this));
     });
   };
@@ -48,7 +49,7 @@ var Comments = function () {
       instance.closest('li').append(
         '<ul class="comments" id="comments_' + postId + '">' +
           '<li class="commenter">' +
-            '<textarea class="comment_message" placeholder="Write you comment here!"></textarea>' +
+            '<textarea class="comment_message" placeholder="Write your comment here!"></textarea>' +
             '<div class="flexbox">' +
               '<button class="publish-comment btn small" data-post-id="' + postId + '">Comment</button>' +
             '</div>' +
