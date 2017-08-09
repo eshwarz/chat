@@ -26,8 +26,8 @@ var Comments = function () {
    * Opens reply / comment box
    * @return {void}
    */
-  this.openCommenter = function (e) {
-    $('#posts').on('click', '.reply', function () {
+  this.openCommenter = function () {
+    $('#posts').on('click', '.reply', function (e) {
       e.preventDefault();
       _this.openCommenterForPost($(this));
     });
